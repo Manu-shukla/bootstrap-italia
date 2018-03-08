@@ -78,7 +78,7 @@ const Zoom = (($) => {
      }
 
      _zoom(e) {
-       var target = e.target
+       var target = e.target;
 
        if (!target || target.tagName !== 'IMG') return
 
@@ -221,18 +221,14 @@ const Zoom = (($) => {
      _calculateZoom() {
        this._targetImage.offsetWidth // repaint before animating
 
-       var originalFullImageWidth  = this._fullWidth
-       var originalFullImageHeight = this._fullHeight
-
-       var scrollTop = $(window).scrollTop()
-
-       var maxScaleFactor = originalFullImageWidth / this._targetImage.width
-
-       var viewportHeight = ($(window).height() - ZOOM_OFFSET)
-       var viewportWidth  = ($(window).width() - ZOOM_OFFSET)
-
-       var imageAspectRatio    = originalFullImageWidth / originalFullImageHeight
-       var viewportAspectRatio = viewportWidth / viewportHeight
+        var originalFullImageWidth  = this._fullWidth, 
+        originalFullImageHeight = this._fullHeight,
+        scrollTop = $(window).scrollTop(),
+        maxScaleFactor = originalFullImageWidth / this._targetImage.width,
+        viewportHeight = ($(window).height() - ZOOM_OFFSET),
+        viewportWidth  = ($(window).width() - ZOOM_OFFSET),
+        imageAspectRatio    = originalFullImageWidth / originalFullImageHeight,
+        viewportAspectRatio = viewportWidth / viewportHeight;
 
        if (originalFullImageWidth < viewportWidth && originalFullImageHeight < viewportHeight) {
          this._imgScaleFactor = maxScaleFactor
