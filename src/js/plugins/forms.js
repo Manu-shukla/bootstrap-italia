@@ -46,13 +46,13 @@ $(".form-group input[type='file']").on("focusout", function() {
 });
 
 $('input:file').on('change', function(e){
-  var numFiles = e.currentTarget.files.length;
-  var nomiFiles = ""
-  var multi = ""
+  var numFiles = e.currentTarget.files.length,
+   nomiFiles = "",
+   multi = "";
   for (i=0;i<numFiles;i++){
     fileSize = parseInt(e.currentTarget.files[i].size, 10)/1024;
     filesize = Math.round(fileSize);
-    nomiFiles = nomiFiles + e.currentTarget.files[i].name + ' (' + filesize + 'kb); '
+    nomiFiles = nomiFiles + e.currentTarget.files[i].name + ' (' + filesize + 'kb) ' ;
   }
   if (numFiles>1) {
     multi = numFiles + " file da caricare: "
